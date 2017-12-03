@@ -42,5 +42,25 @@ Android 系统四大组件分别是活动(Activity)、服务(Service)、广播�
  * 因为所有程序都包含在活动中，我们看一下HelloWorldActivity，HelloWorldActivity 是继承自 AppCompatActivity 的。`我们项目中所有的活动都必须要继承它才能拥有活动的特性。`onCreate()方法是一个活动被创建时必定要执行的方法，其中只有两行代码，并且没有Hello world!的字样。
  * 显示的Hello world!是在哪里定义的呢？其实 Android程序的设计讲究逻辑和视图分离，因此是不推荐在活动中直接编写界面的，更加通用的一种做法是，在布局文件中编写界面，然后在活动中引入进来。
  
+res目录
+-
+其实归纳一下，res 目录就变得非常简单了。所有以 drawable 开头的文件夹都是用来放图片的，所有以 values 开头的文件夹都是用来放字符串的， layout 文件夹是用来放布局文件的，menu 文件夹是用来放菜单文件的。
+
+比如刚刚在 strings.xml 中找到的 Hello world!字符串，我们有两种方式可以引用它:
+ * 在代码中通过 R.string.hello_world 可以获得该字符串的引用
+ * 在 XML 中通过@string/hello_world 可以获得该字符串的引用。
+ 
+HelloWorld 项目的图标就是在 AndroidManifest.xml 中通过 android:icon="@drawable/ic_launcher"来指定的，ic_launcher 这张图片就在 drawable 文件夹下， 如果想要修改项目的图标应该知道怎么办了吧
+
+使用 Android 的日志工具 Log
+-
+既然 LogCat 已经添加完成，我们来学习一下如何使用 Android 的日志工具吧。Android 中的日志工具类是 Log(android.util.Log)，这个类中提供了如下几个方法来供我们打印日志。
+
+活动是什么
+-
+活动(Activity)是最容易吸引到用户的地方了，它是一种可以包含用户界面的组件， 主要用于和用户进行交互。一个应用程序中可以包含零个或多个活动。我们可以通过不再勾选 Create Activity 这个选项手动创建活动。
+
+
+ 
 
  
